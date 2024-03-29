@@ -8,13 +8,14 @@ import Pagination from './components/Pagination/Pagination';
 import WeatherApp from './components/WeatherApp/WeatherApp';
 import SpellCheck from './components/SpellCheck/SpellCheck';
 import DictionaryApp from './components/DisctionaryApp/DisctionaryApp';
+import Table from './components/Table/Table';
 import './App.css';
 import React from 'react';
 
 function App() {
   return (
     <div className="App">
-        <DictionaryApp />
+        <Table />
     </div>
   );
 }
