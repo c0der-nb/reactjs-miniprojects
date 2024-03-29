@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import Fullname from './components/Fullname/Fullname';
+import CounterApp from './components/CounterApp/CounterApp';
+import ReactCalculator from './components/ReactCalculator/ReactCalculator';
+import Login from './components/Login/Login';
+import SelectLocation from './components/SelectLocation/SelectLocation';
+import ClassComp from './components/ClassComp/ClassComp';
+import Pagination from './components/Pagination/Pagination';
+import WeatherApp from './components/WeatherApp/WeatherApp';
+import SpellCheck from './components/SpellCheck/SpellCheck';
+import DictionaryApp from './components/DisctionaryApp/DisctionaryApp';
 import './App.css';
+import React from 'react';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <DictionaryApp />
     </div>
   );
 }

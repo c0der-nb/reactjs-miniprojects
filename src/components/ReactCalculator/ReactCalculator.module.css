@@ -1,0 +1,28 @@
+.container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: 25px;
+}
+
+.buttonGrid {
+    width: 290px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    text-align: center;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+.inputCalc {
+    display: block;
+    margin-top: 15px;
+}
+
+.pCalc {
+    font-size: 20px;
+    margin-top: 30px;
+}

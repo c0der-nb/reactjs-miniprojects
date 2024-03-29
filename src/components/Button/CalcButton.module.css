@@ -1,0 +1,12 @@
+.calcButton {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(237, 230, 230, 0.938);
+    border: 2px solid black;
+    border-radius: 9px;
+}
+
+.calcButton:hover {
+    filter: brightness(120%);
+}
