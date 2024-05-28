@@ -17,13 +17,17 @@ export default function SelectLocation() {
             disabled: true,
         }
     });
+    const [isLoading, setLoading] = useState(true);
 
     const getCountries = async () => {
         try {
+            setLoading(true);
             const apiResponse = await axios.get("https://crio-location-selector.onrender.com/countries");
             setLocationState({...locationState, countries: apiResponse.data});
+            setLoading(false);
         }
         catch (e) {
+            setLoading(false);
             console.error(e); 
         }
     }
@@ -55,6 +59,8 @@ export default function SelectLocation() {
     return (
         <div className={styles.container}>
             <h2>Select Location</h2>
+            {!isLoading ?
+            <div>
             <select onChange={(e) => getStates(e.target.value)} name="countries" id="countries-dropdown">
                 <option hidden disabled selected>Select Country</option>
                 {locationState.countries.map((country) => <option value={country}>{country}</option>)}
@@ -67,6 +73,7 @@ export default function SelectLocation() {
                 <option hidden disabled selected>Select City</option>
                 {locationState.cities.data.map((city) => <option value={city}>{city}</option>)}
             </select>
+            </div> : <div className="loader"></div>}
             {locationState.selectedCity && <p><b>You selected {locationState.selectedCity}</b>, {locationState.selectedState}, {locationState.selectedCountry}</p>}
         </div>
     )

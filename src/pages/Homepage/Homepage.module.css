@@ -1,0 +1,15 @@
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+}
+
+.homepageH3 {
+    cursor: pointer;
+    color: royalblue;
+    text-decoration: underline;
+    margin: 10px 0px 10px 0px;
+}

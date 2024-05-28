@@ -22,8 +22,6 @@ export default function SpellCheck() {
           return correctedWord || word;
         });
     
-        const correctedText = correctedWords.join(" ");
-    
         // Set the suggested text (first corrected word)
         const firstCorrection = correctedWords.find(
           (word, index) => word !== words[index]

@@ -8,7 +8,8 @@ export default function WeatherApp() {
     const [dataToDisplay, setDataToDisplay] = useState([]);
     const [isApiRequestInProgress, setIsApiRequestInProgress] = useState(false);
 
-    const fetchWeatherData = async () => {
+    const fetchWeatherData = async (e) => {
+        e.preventDefault();
         try {
             setIsApiRequestInProgress(true);
             const apiResponse = await axios.get(`https://api.weatherapi.com/v1/current.json`, {
@@ -33,11 +34,13 @@ export default function WeatherApp() {
 
     return (
         <div className={styles.wrapper}>
+            <form onSubmit={fetchWeatherData}>
             <input onChange={(e) => setCity(e.target.value)} placeholder='Enter city name' className={styles.searchInput} type="text" name="search" id="search-box" />
-            <button className={styles.searchButton} onClick={fetchWeatherData}>Search</button>
+            <button type="submit" className={styles.searchButton}>Search</button>
+            </form>
             {!isApiRequestInProgress ? <div className="weather-cards">
                 {dataToDisplay.map((val) => <WeatherCard param={val.param} value={val.value} />)}
-            </div> : <p style={{marginTop: '30px'}}>Loading data...</p>}
+            </div> : <div className="loader"></div>}
         </div>
     )
 }
